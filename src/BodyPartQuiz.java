@@ -31,37 +31,67 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+int score = 0;
 		// 2. Set the size of the window in the initializeGui() method below
 
 		for (int i = 0; i < 4; i++) {
 			
 			// 4. Ask the user who this person is and store their answer
-			String guess= JOptionPane.showInputDialog("who is this?");
+			String guess= JOptionPane.showInputDialog("who is this? first name only");
 			
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
-
+ if(guess.equals("arnold")) {
+	 JOptionPane.showMessageDialog(null, "You are correct!");
+	score++;
+ }
 			// 6. Otherwise:
 			// -- Tell them they are wrong and who the person is
-
+ else {
+	 JOptionPane.showMessageDialog(null, "Wrong! It is Arnold");
+ }
 			// 7. Use the showNextImage() method below to get the next image
 			showNextImage();
 		    // 8. Show them their current score
-			
+			JOptionPane.showMessageDialog(null, "Your score is currently"+(score));
 			// 9. .... repeat for all your images.....
-
-
+String guess2 = JOptionPane.showInputDialog(null, "who is this? first name only");
+if(guess2.equals("leonardo")) {
+	JOptionPane.showMessageDialog(null, "You are correct!");
+	score++;
+}
+else {
+	JOptionPane.showMessageDialog(null, "Wrong! It is Leonardo!");
+}
+showNextImage();
+JOptionPane.showMessageDialog(null, "Your score is currently"+(score));
+String guess3= JOptionPane.showInputDialog("who is this? first name only");
+if(guess3.equals("morgan")) {
+	
+JOptionPane.showMessageDialog(null, "You are correct!");
+score++;
 		}
-
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong! It is morgan");
+		}
+showNextImage();
+	JOptionPane.showMessageDialog(null, "Your score is currently"+score);
+	String guess4= JOptionPane.showInputDialog("who is this? first name only");
+	if(guess4.equals("jack")) {
+		JOptionPane.showMessageDialog(null, "You are correct!");
+		score++;
 	}
-
+	else {
+		JOptionPane.showMessageDialog(null, "Wrong! It is jack");
+	}
+	JOptionPane.showMessageDialog(null, "Your score is currently" +score); } }
+	
 	public void showNextImage() {
 		panel.removeAll();
 		panel.add(getNextImage());		
 		window.setVisible(true);
 	}
-
+		
 	public static void main(String[] args) {
 		BodyPartQuiz quiz = new BodyPartQuiz();
 		quiz.initializeGui();
@@ -107,4 +137,5 @@ public class BodyPartQuiz {
 		System.exit(0);
 		return new JLabel();
 	}
-}
+	}
+	
